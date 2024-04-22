@@ -1,0 +1,171 @@
+{% extends 'python_tutorial/base.html' %} {% load static %}
+{% block hero %}
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <img src="{% static 'img/hero-bg.png' %}" alt="" data-aos="fade-in" />
+    <div class="container">
+      <h2 class="pb-5 mb-5" data-aos="fade-up" data-aos-delay="100">
+        {{topic}}
+      </h2>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+{% endblock hero %}
+
+{% block content %} 
+
+    <section class="contents">
+        <div class="container">
+  {% for content in contents %}
+            <div class="row gy-5 mb-5 align-items-center features-item">
+                <div class=" order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                  
+                  {% if content.title %}
+                    <h3>
+                        {{content.title}}
+                    </h3>
+                  {% endif %}
+                    
+                    
+                    <p class="desc">
+                        {{content.desc}}
+                    </p>
+                </div>
+            </div><!-- Features Item -->
+
+            {% if content.code_example %}
+              <div class="row gy-4 mb-5 align-items-stretch justify-content-between features-item ">
+                  <div class="col d-flex justify-content-center flex-column" data-aos="fade-up">
+  
+                      <div class="bg-dark d-flex align-items-start p-3 pb-1 border border-secondary-subtle rounded border-3">
+<pre class="text-light">
+{{content.code_example}}
+</pre>
+                      </div>
+
+                  </div>
+              </div><!-- Features Item -->
+            {% endif %}
+            {% if content.error_code_example %}
+              <div class="row gy-4 mb-5 align-items-stretch justify-content-between features-item ">
+                  <div class="col d-flex justify-content-center flex-column" data-aos="fade-up">
+  
+                      <div class="bg-dark d-flex align-items-start p-3 border border-danger rounded border-3">
+<pre class="text-light">
+{{content.error_code_example}}
+</pre>
+                      </div>
+                  </div>
+              </div><!-- Features Item -->
+            {% endif %}
+          {% endfor %}
+        </div>
+    </section>
+
+  <section class="quiz">
+    <div class="container">
+      <div class="row mb-5 gy-4 icon-boxes justify-content-center">
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-box">
+            <div class="container section-title" data-aos="fade-up">
+              <h2>Quiz</h2>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col " data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper" id="swiper">
+                  <script type="module">
+                    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+                  
+                    const swiper = new Swiper('.swiper', {
+                      // Optional parameters
+                      loop: true,
+                    
+                      // If we need pagination
+                      pagination: {
+                        el: '.swiper-pagination',
+                        type: 'fraction',
+                      },
+                    
+                      // Navigation arrows
+                      navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                      },
+                    
+                      // And if we need scrollbar
+                      scrollbar: {
+                        el: '.swiper-scrollbar',
+                      },
+                    });
+                  </script>
+                  <div  class="swiper-wrapper ">
+                    {% for question in questions %}
+                      <div id="quiz-questions{{question.id}}" class="swiper-slide">
+                          <div class="mb-1 pt-4">
+                              {{question.question}} 
+                              <input type="text" id="input-{{question.id}}" class="quiz-input">
+                              <i class="bi bi-check-circle invisible" id="check-icon-{{question.id}}"></i>
+                              <i class="bi bi-x-circle invisible" id="x-icon-{{question.id}}"></i>
+                          </div>
+
+                          <div class="answer m-3 invisible" id="answer-{{question.id}}">
+                              <p class="d-inline">
+                                Answer:<mark>{{question.answer}}</mark>
+                              </p>
+                          </div>
+                          
+                          <button id="{{question.id}}" class="btn btn-primary quiz-submit d-block mb-1">Submit answer</button>
+                          <span class="show_answers" href="-" id="{{question.id}}">Show answer</span  >
+                      </div>
+                    {% endfor %}
+                  </div>
+                    <!-- If we need navigation buttons -->
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="activity">
+    <div class="container">
+      <div class="row mb-5 gy-4 icon-boxes">
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-box p-5">
+              <div class="row">
+                  <div class="container section-title" data-aos="fade-up">
+                      <h2>Activity</h2>
+                  </div>
+              </div>
+            
+            <div class="row">
+              <ol>
+                  {% for activity in activities %}
+                  <li>
+                  {{activity.activity}}
+                  </li>
+              </ol>
+            </div>
+            <div class="row ">
+              <div class="note mb-3">
+                <i class="bi bi-journal-text"></i>
+                  <i>Note:</i> This is a BASIC embed, this embed compiler cannot be edited.
+              </div>
+
+              <div data-pym-src="{{activity.compiler_src}}"></div>
+
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

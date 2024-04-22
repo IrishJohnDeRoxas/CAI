@@ -1,0 +1,184 @@
+{% extends 'python_tutorial/base.html' %}
+{% load static %}
+
+{% block hero %}
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <img src="{% static 'img/hero-bg.png' %}" alt="" data-aos="fade-in">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <h2 data-aos="fade-up" data-aos-delay="100">Computer Aided Instructions (CAI) for Python</h2>
+          <p data-aos="fade-up" data-aos-delay="200">
+            A final project for CSPC 13. Unlock the power of Python, dive into a beginner-friendly language for coding magic!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+{% endblock hero %}
+
+{% block about %}
+   <!-- Clients Section - Index Page -->
+   <section id="clients" class="clients">
+
+    <div class="container-fluid" data-aos="fade-up">
+
+      <div class="row gy-4">
+
+        <div class="col-xl-2 col-md-3 col-6 client-logo">
+          <a href="">
+          <img src="{% static 'img/logo/bootstrap.png' %} " class="img-fluid" alt="">
+          </a>
+        </div><!-- End Client Item -->
+
+        <div class="col-xl-2 col-md-3 col-6 client-logo">
+          <a href="">
+              <img src="{% static 'img/logo/bootstrap-icon.png' %} " class="img-fluid" alt="">
+          </a>
+        </div><!-- End Client Item -->
+
+        <div class="col-xl-2 col-md-3 col-6 client-logo">
+          <a href="">
+              <img src="{% static 'img/logo/swiper.png' %} " class="img-fluid" alt="">
+          </a>
+        </div><!-- End Client Item -->
+
+        <div class="col-xl-2 col-md-3 col-6 client-logo">
+          <a href="">
+              <img src="{% static 'img/logo/aos.png' %} " class="img-fluid" alt="">
+          </a>
+        </div><!-- End Client Item -->
+
+        <div class="col-xl-2 col-md-3 col-6 client-logo">
+          <a href="">
+              <img src="{% static 'img/logo/isotope.png' %} " class="img-fluid" alt="">
+          </a>
+        </div><!-- End Client Item -->
+
+        <div class="col-xl-2 col-md-3 col-6 client-logo">
+          <a href="">
+              <img src="{% static 'img/logo/django-python-logo.png' %} " class="img-fluid" alt="">
+          </a>
+        </div><!-- End Client Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- End Clients Section -->
+
+  <!-- About Section - Index Page -->
+  <section id="about" class="about">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row align-items-xl-center gy-5">
+
+        <div class="col-xl-5 content">
+          <h3>About Us</h3>
+          <h2>Python</h2>
+          <p>
+            Are you curious about programming but feel intimidated by complex syntax and jargon? Look no further! 
+            This website is your gateway to learning Python, a powerful and beginner-friendly programming language.
+            Here, we'll guide you through the fundamentals, equipping you with the essential building blocks to embark
+            on your coding journey.
+          </p>
+          <a href="https://www.python.org/about/" class="read-more" target="_blank">
+            <span>Read More</span><i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="col-xl-7">
+          <div class="row gy-4 icon-boxes">
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon-box">
+                <i class="bi bi-archive"></i>
+                <h3>Demystifying the Basics: Syntax, Comments, and Variables</h3>
+                <p>Python's clear syntax and use of indentation make code readable. Comments (#) explain your code. 
+                  Variables (named boxes) store data.
+                </p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon-box">
+                <i class="bi bi-calculator"></i>
+                <h3>Exploring Data Types: Numbers, Casting, and Strings</h3>
+                <p>
+                  Python handles different data types: numbers (whole, decimals, even complex), and strings (text).
+                   Casting lets you convert between types. Strings are manipulated using built-in functions.
+                </p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon-box">
+                <i class="bi bi-rocket"></i>
+                <h3>Stay Tuned for Your Python Adventure</h3>
+                <p>
+                  This is just a peek at Python's potential. We'll delve deeper, introduce operators, control flow, 
+                  and functions, and help you build your first programs. Get ready to code!
+                </p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- End About Section - Index Page -->
+{% endblock about %}
+
+{% block stats %}
+  <!-- Stats Section - Home Page -->
+  <section id="stats" class="stats">
+
+    <img src="{% static 'img/python.webp' %}" alt="" data-aos="fade-in">
+
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="13000000" data-purecounter-duration="1" 
+            data-purecounter-separator="," class="purecounter"></span>
+            <p>Total Visits</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="2.43" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Pages per Visit</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="5837" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Global Rank</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="173" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Category Rank</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- End Stats Section -->
+
+{% endblock stats %}
+  
