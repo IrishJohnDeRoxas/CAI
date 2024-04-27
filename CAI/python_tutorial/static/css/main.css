@@ -107,7 +107,7 @@ h6 {
 
 .bi-check-circle {
   position: relative;
-  color: green; 
+  color: green !important; 
   font-size: 1.5rem; 
   margin-top:10px ;
 }
@@ -404,7 +404,7 @@ section .img-bg {
     line-height: 0;
     margin-right: 10px;
     cursor: pointer;
-    transition: color 0.3s;
+    /* transition: color 0.3s; */
   }
 
   .navmenu {
@@ -421,7 +421,7 @@ section .img-bg {
     border-radius: 6px;
     background-color: var(--nav-dropdown-background-color);
     overflow-y: auto;
-    transition: 0.3s;
+    /* transition: 0.3s; */
     z-index: 9998;
     box-shadow: 0px 0px 30px rgba(var(--default-color-rgb), 0.1);
   }
@@ -761,22 +761,22 @@ section .img-bg {
     transition-delay: 0 !important;
   }
   #preloader div:nth-child(1) {
-  left: calc(42% + 8px);
+  left: calc(41% + 8px);
   animation: animate-preloader-1 0.6s infinite;
   }
 
   #preloader div:nth-child(2) {
-    left: calc(42% + 8px);
+    left: calc(41% + 8px);
     animation: animate-preloader-2 0.6s infinite;
   }
 
   #preloader div:nth-child(3) {
-    left: calc(42% + 32px);
+    left: calc(41% + 32px);
     animation: animate-preloader-2 0.6s infinite;
   }
 
   #preloader div:nth-child(4) {
-    left: calc(42% + 56px);
+    left: calc(41% + 56px);
     animation: animate-preloader-3 0.6s infinite;
   }
 }
@@ -827,6 +827,12 @@ section,
   margin-bottom: 0;
 }
 
+@media (max-width:375px) {
+  .section-title h2 {
+    font-size: 29px;
+}
+
+}
 /*--------------------------------------------------------------
 # Page Title & Breadcrumbs
 --------------------------------------------------------------*/
@@ -3015,7 +3021,7 @@ section,
 /*--------------------------------------------------------------
 # Section Lessons - Lessons
 --------------------------------------------------------------*/
-s
+
 #lessons .bi-check-circle::before{
   position: absolute;
   padding-top: 6px;
